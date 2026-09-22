@@ -5,7 +5,7 @@ let charm='eye';
 const charmStorageKey='little-doodles.selected-charm';
 const charmChoices=['eye','dream','pig','chillies','nazar','thor','ironman','spiderman','captain','hulk','panda','bunny','penguin','koala','elephant','fox','owl','bubududu','dog'];
 const N=24,dt=1/120;
-function resize(){w=innerWidth;h=innerHeight;dpr=Math.min(devicePixelRatio||1,2);canvas.width=w*dpr;canvas.height=h*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);anchor={x:w*(w<700?.68:.665),y:-8};length=Math.min(h*(w<700?.48:.39),360);radius=w<700?53:72;reset();}
+function resize(){w=innerWidth;h=innerHeight;dpr=Math.min(devicePixelRatio||1,2);canvas.width=w*dpr;canvas.height=h*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);anchor={x:w*(w<700?.68:.665),y:-8};length=Math.min(h*(w<700?.4:.33),300);radius=w<700?53:72;reset();}
 function reset(){elasticLength=length;stretchVelocity=0;points=Array.from({length:N+1},(_,i)=>({x:anchor.x,y:anchor.y+length*i/N,px:anchor.x,py:anchor.y+length*i/N}));drag=null;angle=0;document.querySelector('#hint').style.opacity=1;}
 function physics(){
 // A damped spring controls cord extension independently of its flexible shape.
