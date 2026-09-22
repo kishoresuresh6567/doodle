@@ -7,10 +7,15 @@
 #doodle-menu{position:fixed;z-index:5;top:90px;left:4.5%;width:min(300px,91vw);max-height:calc(100dvh - 112px);overflow-y:auto;padding:24px 16px 16px;background:#fbfaf5;border:1px solid #dddfd5;border-radius:18px;box-shadow:0 14px 45px #303b361a}
 #doodle-menu>.eyebrow{padding:0 10px 18px;font-size:9px}
 #string-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;padding:13px 12px;border:0;border-radius:10px;background:#eceee6;font-size:14px;text-align:left}
+.doodle-mode{display:flex;align-items:center;justify-content:space-between;width:100%;margin-top:8px;padding:13px 12px;border:0;border-radius:10px;background:transparent;font-size:14px;text-align:left}
+.doodle-mode:hover,.doodle-mode[aria-expanded="true"]{background:#eceee6}
 .menu-chevron{font-size:20px;line-height:1;transition:transform .15s}
 #string-toggle[aria-expanded="true"] .menu-chevron{transform:rotate(180deg)}
+#punch-doodle[aria-expanded="true"] .menu-chevron{transform:rotate(180deg)}
 #doodle-menu .charm-options{flex-direction:column;flex-wrap:nowrap;max-width:none;margin:10px 0 0 12px;padding-left:10px;border-left:1px solid #dddfd5;gap:4px}
 #doodle-menu .charm-options button{text-align:left;border-radius:8px;border-color:transparent;font-size:13px;padding:12px}
+.punch-options{display:flex;flex-direction:column;margin:10px 0 0 12px;padding-left:10px;border-left:1px solid #dddfd5;gap:4px}.punch-options button{text-align:left;border:1px solid transparent;border-radius:8px;background:transparent;padding:12px;font-size:13px}.punch-options button:hover{border-color:#7d8974}.punch-options button[aria-pressed="true"]{background:#303b36;color:#f7f5ef}
+.punch-toolbox{position:fixed;z-index:3;left:4.5%;bottom:178px;display:flex;align-items:center;gap:5px;padding:7px;background:#fbfaf5e8;border:1px solid #dddfd5;border-radius:18px;box-shadow:0 8px 25px #303b3612;max-width:91vw;overflow-x:auto}.punch-toolbox>span{padding:0 8px;font-size:8px;font-weight:700;letter-spacing:1.4px;color:#8b9085;white-space:nowrap}.punch-toolbox button{border:1px solid transparent;border-radius:11px;background:transparent;padding:9px 11px;font-size:11px;white-space:nowrap}.punch-toolbox button:hover{border-color:#aeb4a8}.punch-toolbox button[aria-pressed="true"]{background:#303b36;color:#f7f5ef}
 #menu-toggle[aria-expanded="true"]{background:#e6eadf}
 [hidden]{display:none!important}
 @media(max-width:700px){.header-left{gap:10px}#doodle-menu{top:77px;left:6%;width:min(300px,88vw)}.header-left .brand{font-size:16px}}
@@ -24,9 +29,12 @@
 [data-theme="dark"] .icon-button{border-color:#48535c;background:transparent}
 [data-theme="dark"] #menu-toggle[aria-expanded="true"],[data-theme="dark"] #sound[aria-pressed="true"]{background:#3b4850!important}
 [data-theme="dark"] .controls,[data-theme="dark"] #doodle-menu,[data-theme="dark"] dialog{background:#252e36;border-color:#48535c;color:#eeeae0;box-shadow:0 14px 45px #0003}
-[data-theme="dark"] .controls button:hover,[data-theme="dark"] #string-toggle{background:#36434b}
+[data-theme="dark"] .controls button:hover,[data-theme="dark"] #string-toggle,[data-theme="dark"] .doodle-mode:hover,[data-theme="dark"] .doodle-mode[aria-expanded="true"]{background:#36434b}
 [data-theme="dark"] .divider{background:#48535c}
 [data-theme="dark"] #doodle-menu .charm-options{border-color:#48535c}
+[data-theme="dark"] #doodle-menu .punch-options{border-color:#48535c}[data-theme="dark"] .punch-options button{color:#eeeae0}[data-theme="dark"] .punch-options button[aria-pressed="true"]{background:#d1dfd4;color:#25322e}
+[data-theme="dark"] .punch-toolbox{background:#252e36e8;border-color:#48535c}[data-theme="dark"] .punch-toolbox button{color:#eeeae0}[data-theme="dark"] .punch-toolbox button[aria-pressed="true"]{background:#d1dfd4;color:#25322e}
+@media(max-width:700px){.punch-toolbox{left:4%;bottom:170px;justify-content:flex-start}.punch-toolbox>span{position:sticky;left:0;background:inherit}}
 [data-theme="dark"] .charm-options button{background:transparent;color:#eeeae0}
 [data-theme="dark"] .charm-options button[aria-pressed="true"]{background:#d1dfd4;color:#25322e}
 [data-theme="dark"] .charm-options button:hover{border-color:#9baea4}
